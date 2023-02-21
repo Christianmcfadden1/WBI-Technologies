@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Weather DashBoard</title>
+</head>
+<body id="dropshadow">
+    <div class="nav_bar">
+        <h1>Weather App</h1>
+    </div>
+    <div>
+        <div>
+            <h1>{{city}}</h1>
+            <p>last observation at: {{observation_time}}</p>
+        </div>
+        <div class="weather_row">
+            <div id="left_col">
+                <img src={weather_icon} alt="Not Showing" class="left">
+            </div>
+            <div id="right_col">
+                <h2 class="right">{{temperature}}&degF</h2>
+                <h4 class="right">feels like: {{feelsLike}} &degF</h4>
+            </div>
+            <h2 id="weather_des">It's {{weather_description}}</h2>
+        </div>
+        <br>
+            
+        
+        <br>
+        <div>
+            <div class="first_row">
+                <div id="left_col">
+                    <h3>Visibility</h3>
+                    <h2>{{visibility}} mi</h2>   
+                </div>
+                <div id="right_col">
+                    <h3 >Humidity</h3>
+                    <h2>{{humidity}}%</h2>
+                </div>
+            </div>
+            <div class="second_row">
+                <div id="left_col">
+                    <h3>Precipitiation</h3>
+                    <h2>{{precip}}"</h2>
+                </div>
+                <div id="right_col">
+                    <h3>Wind Direction</h3>
+                    <h2>{{wind_dir}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>

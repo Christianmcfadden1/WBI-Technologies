@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+</head>
+<body>
+	<h1>Weather App</h1>
+	<form method="POST" action="/weather">
+		<label for="zip">Enter a zip code:</label>
+		<input type="text" id="zip" name="zip" required>
+		<button type="submit">Get Weather</button>
+	</form>
+	{% if result %}
+		<p>Temperature: {{ result.temp }} &#8457;</p>
+		<p>Weather conditions: {{ result.desc }}</p>
+	{% endif %}
+</body>
+</html>

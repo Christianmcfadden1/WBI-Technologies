@@ -1,0 +1,48 @@
+import requests
+import json
+from flask import Flask, render_template, request, session
+
+app = Flask(__name__)
+app.secret_key = "YOUR_SECRET_KEY_HERE"
+
+# API endpoint URL
+url = "https://api.openweathermap.org/data/2.5/weather"
+
+# API key from OpenWeather
+api_key = "YOUR_API_KEY_HERE"
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/weather", methods=["POST"])
+def weather():
+    # get zip code from form data
+    zip_code = request.form.get("zip")
+
+    # check if zip code has already been requested in this session
+    if "last_zip" in session and zip_code == session["last_zip"]:
+        # use cached weather data
+        result = session["last_result"]
+    else:
+        # parameters for API request
+        params = {"zip": zip_code, "appid": api_key, "units": "imperial"}
+
+        # send API request and get response
+        response = requests.get(url, params=params)
+
+        # parse response as JSON
+        data = json.loads(response.text)
+
+        # extract temperature and weather description from JSON data
+        temp = data["main"]["temp"]
+        desc = data["weather"][0]["description"]
+
+        # pass temperature and weather description to HTML template
+        result = {"temp": temp, "desc": desc}
+
+        # store zip code and weather data in session
+        session["last_zip"] = zip_code
+        session["last_result"] = result
+
+    return render_template("index.html", result=result)

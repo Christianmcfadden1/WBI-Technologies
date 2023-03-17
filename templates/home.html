@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Weather Website</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/community.html">Community</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="notifications">
+            <h2>Weather Notifications</h2>
+            <!-- Display weather notifications here -->
+        </section>
+        
+        <section class="forecast">
+            <h2>Weather Forecast</h2>
+            <form action="/forecast" method="post">
+                <label for="zip_code">Enter Zip Code:</label>
+                <input type="text" id="zip_code" name="zip_code" required>
+                <button type="submit">Get Forecast</button>
+            </form>
+            <!-- Display weather forecast here -->
+        </section>
+        
+        <section class="statistics">
+            <h2>Weather Statistics</h2>
+            <!-- Display weather statistics here -->
+        </section>
+    </main>
+</body>
+</html>

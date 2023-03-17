@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website - Community</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Weather Website</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="community">
+            <h2>Weather Community</h2>
+            <div class="create-thread">
+                <form action="/create_thread" method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                    <br>
+                    <label for="content">Content:</label>
+                    <textarea id="content" name="content" rows="4" required></textarea>
+                    <br>
+                    <button type="submit">Create Thread</button>
+                </form>
+            </div>
+
+            <div class="threads">
+                <h3>Threads:</h3>
+                <!-- Display forum threads here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

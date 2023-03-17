@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Weather Website</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="settings">
+            <h2>Settings</h2>
+
+            <div class="dashboard-settings">
+                <h3>Dashboard Customization</h3>
+                <form action="/update_dashboard" method="post">
+                    <!-- Add dashboard customization options here -->
+                    <button type="submit">Save Dashboard Settings</button>
+                </form>
+            </div>
+
+            <div class="privacy-settings">
+                <h3>Privacy Settings</h3>
+                <form action="/update_privacy" method="post">
+                    <!-- Add privacy settings options here -->
+                    <button type="submit">Save Privacy Settings</button>
+                </form>
+            </div>
+
+            <div class="account-settings">
+                <h3>Account Settings</h3>
+                <form action="/update_account" method="post">
+                    <!-- Add account settings options here -->
+                    <button type="submit">Save Account Settings</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
